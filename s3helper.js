@@ -16,6 +16,7 @@ exports.getObject = function (req, res) {
   
   stream.on('error', function(err){
     console.log(err);
+    res.status(404).end();
   }).pipe(res);
 }
 
