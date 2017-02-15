@@ -12,15 +12,16 @@ app.set('port', process.env.PORT || 8080);
 /* config */
 /**************************/
 
-app.get('/:bucket/:key', s3helper.getObjects, function(req, res) {
+app.get('/:bucket/:key', s3helper.getObject, function(req, res) {
 });
 
-
-
-app.post('/:bucket', s3helper.upload.array('file'), function(req, res) {
-  res.send('Successfully uploaded ' + req.files.length + ' files!')
+app.put('/:bucket', s3helper.putObject.array('file'), function(req, res) {
+  res.send('Successfully uploaded ' + req.files.length + ' files!');
 });
 
+app.post('/:bucket/:key', s3helper.replaceObject.single('file'), function(req, res) {
+  res.send('Successfully uploaded ' + req.params.key);
+});
 
 //Launch the express server
 var server = app.listen(app.get('port'), function() {
