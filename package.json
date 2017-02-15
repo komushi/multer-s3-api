@@ -1,0 +1,18 @@
+{
+  "name": "multer-s3-api",
+  "version": "1.0.0",
+  "description": "An Amazon S3 API with Express and Multer-S3",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.12.0",
+    "express": "^4.14.1",
+    "multer": "^1.3.0",
+    "multer-s3": "^2.5.0"
+  }
+}
